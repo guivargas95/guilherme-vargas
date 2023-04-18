@@ -8,9 +8,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'logo': "url('/img/logo.png')",
+        'logo2': "url('/img/logo@2x.png')",
+      },
+      colors: {
+        azul1: '#0B0914',
+        azul2: '#00C7EB',
+        azul3: '#297CEF',
+
       },
     },
   },
