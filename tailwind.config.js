@@ -17,6 +17,12 @@ module.exports = {
         azul3: '#297CEF',
 
       },
+      width: {
+        '112': '25rem',
+      },
+      height: {
+        '120': '35rem',
+      },
     },
   },
   plugins: [],
