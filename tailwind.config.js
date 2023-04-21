@@ -9,7 +9,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'logo': "url('/img/logo.png')",
-        'logo2': "url('/img/logo@2x.png')",
+        'logo2': "url('/img/logo2.png')",
       },
       colors: {
         azul1: '#0B0914',
