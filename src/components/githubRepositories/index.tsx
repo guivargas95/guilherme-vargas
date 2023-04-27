@@ -1,5 +1,5 @@
 "use client"
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useFetch } from "../../hooks/useFetch";
 import { Repository } from "../../types/RepositoryType";
 
@@ -7,6 +7,20 @@ export default function GithubRepositories() {
 
     const { data: repositories } = useFetch<Repository[]>('https://api.github.com/users/guivargas95/repos');
     console.log(repositories)
+    let idList: string[] = []
+    let [showingId, setShowingId] = useState("")
+
+    useEffect(() => {
+        idList = []
+        repositories?.map(data => {
+            idList.push(data.id)
+        })
+    }, [repositories])
+
+    useEffect(() => {
+        setShowingId(idList[0])
+    }, [idList])
+
 
     return (
         <section className="mt-24">

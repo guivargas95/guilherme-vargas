@@ -12,6 +12,7 @@ export default function Home() {
       <NavBar />
       <Presentation />
       <Skills />
+      <GithubRepositories />
       <About />
       <Footer />
     </div>
