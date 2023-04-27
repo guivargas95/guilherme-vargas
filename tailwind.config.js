@@ -15,6 +15,7 @@ module.exports = {
         azul1: '#0B0914',
         azul2: '#00C7EB',
         azul3: '#297CEF',
+        roxo: '#6609F5',
 
       },
       width: {
