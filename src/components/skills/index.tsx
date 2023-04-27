@@ -85,9 +85,9 @@ export default function Skills() {
                 </ul>
             </div>
             <div className="flex justify-center lg:hidden">
-                <button className="w-2 h-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button1}></button>
-                <button className="w-2 h-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button2}></button>
-                <button className="w-2 h-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button3}></button>
+                <button className="w-3 h-3 ml-2 mr-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button1}></button>
+                <button className="w-3 h-3 ml-2 mr-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button2}></button>
+                <button className="w-3 h-3 ml-2 mr-2 bg-white m-1 rounded-lg focus:bg-azul2" onClick={button3}></button>
             </div>
         </section>
     )
