@@ -31,10 +31,10 @@ export default function About() {
             <div>
                 <img className="w-80 h-96 mr-auto ml-auto" src="/img/Foto.png" alt="" />
                 <div className="flex mt-4 justify-center">
-                    <button><img className="ml-2 mr-2" src="/img/github.png" alt="" /></button>
-                    <button><img className="ml-2 mr-2" src="/img/instagram.png" alt="" /></button>
-                    <button><img className="ml-2 mr-2" src="/img/linkedin-in.png" alt="" /></button>
-                    <button><img className="ml-2 mr-2" src="/img/whatsappazul.png" alt="" /></button>
+                    <a href="https://github.com/guivargas95/" target="_blank"><img className="ml-2 mr-2" src="/img/github.png" alt=""  /></a>
+                    <a href="https://www.instagram.com/guii.vargas/?hl=pt-br" target="_blank"><img className="ml-2 mr-2" src="/img/instagram.png" alt=""  /></a>
+                    <a href="https://www.linkedin.com/in/guivargas95/" target="_blank"><img className="ml-2 mr-2" src="/img/linkedin-in.png" alt=""  /></a>
+                    <a href="https://whatsa.me/5541992295513/?t=Ol%C3%A1,%20Guilherme.%20" target="_blank"><img className="ml-2 mr-2" src="/img/whatsappazul.png" alt=""  /></a>
                 </div>
             </div>
         </section>
