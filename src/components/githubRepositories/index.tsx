@@ -28,7 +28,7 @@ export default function GithubRepositories() {
                 <h2 className="p-1 text-azul2">Projects</h2>
             </div>
             <div className="mt-7 flex justify-around md:hidden">
-                <button><img src="/img/back.png" onClick={prevRepo} alt="" /></button>
+                <button className="w-10 flex justify-center items-center" onClick={prevRepo}><img src="/img/back.png" className="w-2.5 h-4" alt="" /></button>
                 <ul className="text-white">
                     {repositories && repositories.length > 0 ? (
                         <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl" key={repositories[currentIndex].id}>
@@ -43,7 +43,7 @@ export default function GithubRepositories() {
                         <li>No repositories found.</li>
                     )}
                 </ul>
-                <button><img src="/img/next.png" onClick={nextRepo} alt="" /></button>
+                <button className="w-10 flex justify-center items-center" onClick={nextRepo}><img src="/img/next.png" className="w-2.5 h-4" alt="" /></button>
             </div>
             <div className="text-white flex flex-col items-center mt-16">
                 <ul className="hidden md:w-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-14 grid-flow-dense">
