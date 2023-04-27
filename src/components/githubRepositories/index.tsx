@@ -6,21 +6,19 @@ import { Repository } from "../../types/RepositoryType";
 export default function GithubRepositories() {
 
     const { data: repositories } = useFetch<Repository[]>('https://api.github.com/users/guivargas95/repos');
-    console.log(repositories)
-    let idList: string[] = []
-    let [showingId, setShowingId] = useState("")
+    const [currentIndex, setCurrentIndex] = useState(0)
 
-    useEffect(() => {
-        idList = []
-        repositories?.map(data => {
-            idList.push(data.id)
-        })
-    }, [repositories])
+    function nextRepo() {
+        if (currentIndex + 1 < repositories!.length) {
+            setCurrentIndex(currentIndex + 1)
+        }
+    }
 
-    useEffect(() => {
-        setShowingId(idList[0])
-    }, [idList])
-
+    function prevRepo() {
+        if (currentIndex != 0) {
+            setCurrentIndex(currentIndex - 1)
+        }
+    }
 
     return (
         <section className="mt-24">
@@ -29,31 +27,39 @@ export default function GithubRepositories() {
                 <h2 className="p-1">Personal</h2>
                 <h2 className="p-1 text-azul2">Projects</h2>
             </div>
-            <div className="mt-7">
-                <button><img src="" alt="" /></button>
-                <ul className="">
+            <div className="mt-7 flex justify-around md:hidden">
+                <button><img src="/img/back.png" onClick={prevRepo} alt="" /></button>
+                <ul className="text-white">
+                    {repositories && repositories.length > 0 ? (
+                        <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl" key={repositories[currentIndex].id}>
+                            <h3 className="font-bold">{repositories[currentIndex].name}</h3>
+                            <p className="mt-5">{repositories[currentIndex].description}</p>
+                            <a target="_blank" href={repositories[currentIndex].html_url}><button className="mt-5 w-36 h-8 rounded-2xl bg-gradient-to-r from-azul3 to-azul2">Repository</button></a>
+                            {repositories[currentIndex].homepage != "" && (
+                                <a target="_blank" href={repositories[currentIndex].homepage}><button className="mt-5 w-36 h-8 rounded-2xl bg-gradient-to-r from-roxo to-azul2">View Project</button></a>
+                            )}
+                        </li>
+                    ) : (
+                        <li>No repositories found.</li>
+                    )}
+                </ul>
+                <button><img src="/img/next.png" onClick={nextRepo} alt="" /></button>
+            </div>
+            <div className="text-white flex flex-col items-center mt-16">
+                <ul className="hidden md:w-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-14 grid-flow-dense">
                     {repositories?.map(repo => {
-                        if (repo.homepage == "") {
-                            return (
-                                <li className="" key={repo.name}>
-                                    <h3 className="">{repo.name}</h3>
-                                    <p className="">{repo.description}</p>
-                                    <a target="_blank" href={repo.html_url}><button className="">Repository</button></a>
-                                </li>
-                            )
-                        } else {
-                            return (
-                                <li className="" key={repo.name}>
-                                    <h3 className="">{repo.name}</h3>
-                                    <p className="">{repo.description}</p>
-                                    <a target="_blank" href={repo.html_url}><button className="">Repository</button></a>
-                                    <a target="_blank" href={repo.homepage}><button className="">Project</button></a>
-                                </li>
-                            )
-                        }
+                        return (
+                            <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl" key={repo.id}>
+                                <h3 className="font-bold">{repo.name}</h3>
+                                <p className="mt-5">{repo.description}</p>
+                                <a target="_blank" href={repo.html_url}><button className="mt-5 w-36 h-8 rounded-2xl bg-gradient-to-r from-azul3 to-azul2">Repository</button></a>
+                                {repo.homepage != "" && (
+                                    <a target="_blank" href={repo.homepage}><button className="mt-5 w-36 h-8 rounded-2xl bg-gradient-to-r from-roxo to-azul2">View Project</button></a>
+                                )}
+                            </li>
+                        )
                     })}
                 </ul>
-                <button><img src="" alt="" /></button>
             </div>
         </section>
     )
