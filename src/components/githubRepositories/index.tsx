@@ -31,7 +31,7 @@ export default function GithubRepositories() {
                 <button className="w-10 flex justify-center items-center" onClick={prevRepo}><img src="/img/back.png" className="w-2.5 h-4" alt="" /></button>
                 <ul className="text-white">
                     {repositories && repositories.length > 0 ? (
-                        <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl" key={repositories[currentIndex].id}>
+                        <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl fadeIn" key={repositories[currentIndex].id}>
                             <h3 className="font-bold">{repositories[currentIndex].name}</h3>
                             <p className="mt-5">{repositories[currentIndex].description}</p>
                             <a target="_blank" href={repositories[currentIndex].html_url}><button className="mt-5 w-36 h-8 rounded-2xl bg-gradient-to-r from-azul3 to-azul2">Repository</button></a>

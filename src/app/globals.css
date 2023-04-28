@@ -16,3 +16,32 @@ body {
       transparent,
       rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
 }
+
+@layer utilities {
+
+  .zoomInUp {
+    animation: zoomInUp;
+    animation-duration: 2s;
+  }
+
+  .fadeIn {
+    animation: fadeIn;
+    animation-duration: 1.5s;
+  }
+
+  .fadeInDown {
+    animation: fadeInDown;
+    animation-duration: 1s;
+  }
+
+  .backInLeft {
+    animation: backInLeft;
+    animation-duration: 1s;
+  }
+
+  .backInRight {
+    animation: backInRight;
+    animation-duration: 1s;
+  }
+
+}
