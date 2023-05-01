@@ -4,7 +4,7 @@ import { useState } from "react"
 
 export default function About() {
 
-    const textos = ["My name is Guilherme, I'm in a process to make career transition to software development area. I have about five years of experience in IT Support area. I started the transition making some freelance of front-end projects. If you are interessed, please, feel free to contact me. I hope you liked. Bye.", "Meu nome é Guilherme, estou em um processo de transição de carreira para a área de desenvolvimento de software. Tenho cerca de cinco anos de experiência na área de Suporte de TI. Comecei a transição fazendo alguns projetos freelance de front-end. Se você estiver interessado, por favor, sinta-se à vontade para entrar em contato comigo. Espero que você tenha gostado. Até mais!"]
+    const textos = ["My name is Guilherme, I'm in a process to make career transition to software development area. I have about five years of experience in IT Support area. I started the transition making some freelancers of front-end projects. If you are interessed, please, feel free to contact me. I hope you liked. Bye.", "Meu nome é Guilherme, estou em um processo de transição de carreira para a área de desenvolvimento de software. Tenho cerca de cinco anos de experiência na área de Suporte de TI. Comecei a transição fazendo alguns projetos freelancers de front-end. Se você estiver interessado, por favor, sinta-se à vontade para entrar em contato comigo. Espero que você tenha gostado. Até mais!"]
     const [numTexto, setNumTexto] = useState(0)
 
     function TextoEnUs() {
