@@ -26,7 +26,7 @@ export default function Skills() {
                 <h3 className="text-white font-bold text-lg lg:text-2xl">Software</h3>
                 <h3 className="text-white font-bold text-lg lg:text-2xl">Development</h3>
                 <h3 className="text-azul2 font-bold text-lg lg:text-2xl">Skills</h3>
-                <p className="text-white mt-6 lg:w-112">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores quaerat quod ut, fugit voluptas sequi, tempora quae quasi sint inventore provident facere molestias ullam, officia voluptatum ab vel exercitationem.</p>
+                <p className="text-white mt-6 lg:w-112">After some years working in IT area I got knowledge in some technologies. Every day I learn something new working in my personal projects and with some freelance jobs. </p>
             </div>
             <div className="mt-8 lg:hidden">
                 <ul className="flex text-azul2 justify-center">
