@@ -6,17 +6,17 @@ import { Repository } from "../../types/RepositoryType";
 export default function GithubRepositories() {
 
     const { data: repositories } = useFetch<Repository[]>('https://api.github.com/users/guivargas95/repos');
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const [currentIndex, setCurrentIndex] = useState(5)
 
     function nextRepo() {
-        if (currentIndex + 1 < repositories!.length) {
-            setCurrentIndex(currentIndex + 1)
+        if (currentIndex != 0) {
+            setCurrentIndex(currentIndex - 1)
         }
     }
 
     function prevRepo() {
-        if (currentIndex != 0) {
-            setCurrentIndex(currentIndex - 1)
+        if (currentIndex + 1 < repositories!.length) {
+            setCurrentIndex(currentIndex + 1)
         }
     }
 
@@ -47,7 +47,7 @@ export default function GithubRepositories() {
             </div>
             <div className="text-white flex flex-col items-center mt-16">
                 <ul className="hidden md:w-auto md:grid md:grid-cols-2 lg:grid-cols-3 gap-x-20 gap-y-14 grid-flow-dense">
-                    {repositories?.map(repo => {
+                    {repositories?.slice(0).reverse().map(repo => {
                         return (
                             <li className="w-64 h-64 flex flex-col justify-center text-center border-2 border-azul2 rounded-xl" key={repo.id}>
                                 <h3 className="font-bold">{repo.name}</h3>
